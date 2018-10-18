@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 declare function init_plugins();
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,14 +10,16 @@ declare function init_plugins();
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor( public router: Router ) { }
 
   ngOnInit() {
     init_plugins();
   }
 
-  Ingresar() {
-    console.log('Ingresando...');
-    this.router.navigate(['/dashboard']);
+  ingresar() {
+
+    this.router.navigate([ '/dashboard' ]);
+
   }
+
 }
