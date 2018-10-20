@@ -16,9 +16,22 @@ export class UsuarioService {
   }
 
   login(usuario: Usuario, recordar: boolean = false) {
-    console.log('ENTRA LOGIN');
+
+    if (recordar) {
+      localStorage.setItem('email', usuario.email);
+    } else {
+      localStorage.removeItem('email');
+    }
+
     const url = URL_SERVICIOS + '/api/Login';
-    return this.http.post(url, usuario);
+    return this.http.post(url, usuario).pipe(
+      map((resp: any) => {
+        localStorage.setItem('id', resp.id);
+        localStorage.setItem('token', resp.token);
+        localStorage.setItem('seleccionUsuario', JSON.stringify(resp.seleccionUsuario));
+
+        return true;
+      }));
 
   }
 
