@@ -19,6 +19,8 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+// Pipe Module
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -33,7 +35,6 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    // SettingsService
   ],
   exports: [
     DashboardComponent,
@@ -45,6 +46,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     PAGES_ROUTES,
     FormsModule,
     ChartsModule,
+    PipesModule,
   ]
 })
 export class PagesModule { }
