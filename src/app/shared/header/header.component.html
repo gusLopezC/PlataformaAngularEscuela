@@ -8,20 +8,20 @@
     <!-- ============================================================== -->
     <div class="navbar-header">
       <a class="navbar-brand" href="index.html">
-        <!-- Logo icon --><b>
-          <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-          <!-- Dark Logo icon -->
-          <img src="/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-          <!-- Light Logo icon -->
-          <img src="/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
-        </b>
-        <!--End Logo icon -->
-        <!-- Logo text --><span>
-          <!-- dark Logo text -->
-          <img src="/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-          <!-- Light Logo text -->
-          <img src="/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
-    </div>
+          <!-- Logo icon --><b>
+              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+              <!-- Dark Logo icon -->
+              <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" height="38"/>
+              <!-- Light Logo icon -->
+              <img src="../assets/images/logo-icon-ligth.png" alt="homepage" class="light-logo" height="38" />
+          </b>
+          <!--End Logo icon -->
+          <!-- Logo text --><span>
+           <!-- dark Logo text -->
+           <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" height="52"/>
+           <!-- Light Logo text -->    
+           <img src="../assets/images/logo-text-ligth.png" class="light-logo" alt="homepage" height="52" /></span> </a>
+  </div>
     <!-- ============================================================== -->
     <!-- End Logo -->
     <!-- ============================================================== -->
@@ -134,17 +134,17 @@
           <div class="dropdown-menu dropdown-menu-right animated flipInY">
             <ul class="dropdown-user">
               <li>
-                <div class="dw-user-box">
+                <div class="dw-user-box" align="center">
                   <div class="u-img"><img [src]="usuario.imagen | imagen" alt="user"></div>
                   <div class="u-text">
                     <h5>{{ usuario.name }} </h5>
-                    <p class="text-muted">{{ usuario.email }}</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View
-                      Profile</a>
+                    <p class="text-muted">{{ usuario.email }}</p>
+                    <a routerLink="/perfil" class="btn btn-rounded btn-danger btn-sm">Ver Perfil</a>
                   </div>
                 </div>
               </li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+              <li><a routerLink="/perfil"><i class="ti-user"></i> Mi Perfil</a></li>
               <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
               <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
               <li role="separator" class="divider"></li>

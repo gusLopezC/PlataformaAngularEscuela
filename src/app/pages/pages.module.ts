@@ -21,6 +21,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 // Pipe Module
 import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -35,6 +36,7 @@ import { PipesModule } from '../pipes/pipes.module';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
+    ProfileComponent,
   ],
   exports: [
     DashboardComponent,

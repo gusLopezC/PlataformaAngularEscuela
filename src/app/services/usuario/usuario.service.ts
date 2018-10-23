@@ -18,7 +18,7 @@ export class UsuarioService {
   }
 
   guardarStorage(id: string, token: string, seleccionUsuario: Usuario) {
-    localStorage.setItem('id', id);
+    localStorage.setItem('id', seleccionUsuario._id);
     localStorage.setItem('token', token);
     localStorage.setItem('seleccionUsuario', JSON.stringify(seleccionUsuario));
 
@@ -91,6 +91,22 @@ export class UsuarioService {
 
   estaLogueado() {
     return (this.token.length > 8) ? true : false;
+  }
+
+
+  actualizarUsuario(usuario: Usuario) {
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json; charset=utf-8');
+      headers.append('Authorization', this.token);
+
+    console.log(headers);
+
+    const url = URL_SERVICIOS + '/api/Usuarios/' + usuario._id;
+
+    console.log(url);
+
+    return this.http.put(url, usuario);
   }
 
 
