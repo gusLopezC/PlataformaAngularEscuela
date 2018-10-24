@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -13,12 +13,14 @@ export class UsuarioService {
   seleccionUsuario: Usuario;
   token: string;
 
+
   constructor(public http: HttpClient, public router: Router) {
     this.cargarStorage();
+
   }
 
   guardarStorage(id: string, token: string, seleccionUsuario: Usuario) {
-    localStorage.setItem('id', seleccionUsuario._id);
+    localStorage.setItem('_id', seleccionUsuario._id);
     localStorage.setItem('token', token);
     localStorage.setItem('seleccionUsuario', JSON.stringify(seleccionUsuario));
 
@@ -96,18 +98,21 @@ export class UsuarioService {
 
   actualizarUsuario(usuario: Usuario) {
 
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
-      headers.append('Authorization', this.token);
-
-    console.log(headers);
-
     const url = URL_SERVICIOS + '/api/Usuarios/' + usuario._id;
 
-    console.log(url);
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    headers = headers.set('Authorization', this.token);
 
-    return this.http.put(url, usuario);
+    return this.http.put(url, usuario, { headers }).pipe(
+      map((resp: any) => {
+
+        const usuarioDB: Usuario = resp.usuarioActualizado;
+        this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+
+        swal('Usuario actualizado', usuario.name, 'success');
+        return true;
+      }));
   }
-
 
 }

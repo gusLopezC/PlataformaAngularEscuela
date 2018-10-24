@@ -17,7 +17,7 @@
             <label for="exampleInputEmail1">Dirección de correo electrónico </label>
             <div class="input-group">
               <div class="input-group-addon"><i class="ti-email"></i></div>
-              <input [(ngModel)]="usuario.email" name="email" type="email" class="form-control" placeholder="Email">
+              <input [(ngModel)]="usuario.email" [disabled]="usuario.google" name="email" type="email" class="form-control" placeholder="Email">
             </div>
           </div>
 
