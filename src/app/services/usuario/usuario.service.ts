@@ -108,8 +108,8 @@ export class UsuarioService {
       map((resp: any) => {
 
         const usuarioDB: Usuario = resp.usuarioActualizado;
+        console.log(resp.usuarioActualizado);
         this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
-
         swal('Usuario actualizado', usuario.name, 'success');
         return true;
       }));
