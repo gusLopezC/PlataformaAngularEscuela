@@ -8,106 +8,49 @@
           <div class="form-group">
             <label for="exampleInputuname">Nombre usuario</label>
             <div class="input-group">
-              <div class="input-group-addon"><i class="ti-user"></i></div>
-              <input [(ngModel)]="usuario.name" name="name" type="text" class="form-control" placeholder="Nombre Usuario"
-                required>
+              <div class="input-group-addon">
+                <i class="ti-user"></i>
+              </div>
+              <input [(ngModel)]="usuario.name" name="name" type="text" class="form-control" placeholder="Nombre Usuario" required>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Dirección de correo electrónico </label>
             <div class="input-group">
-              <div class="input-group-addon"><i class="ti-email"></i></div>
+              <div class="input-group-addon">
+                <i class="ti-email"></i>
+              </div>
               <input [(ngModel)]="usuario.email" [disabled]="usuario.google" name="email" type="email" class="form-control" placeholder="Email">
             </div>
           </div>
 
-          <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-save"></i>
+          <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+            <i class="fa fa-save"></i>
             Enviar</button>
-          <button type="submit" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-ban"></i> Cancelar</button>
+          <!-- <button type="submit" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-ban"></i> Cancelar</button> -->
         </form>
       </div>
     </div>
   </div>
 
 
-  <div class="col-sm-5">
+  <div class="col-lg-5">
     <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Actualizar Foto</h4>
-        <h6 class="card-subtitle"></h6>
+      <div class="card-body" align="center">
+        <h4 class="card-title">Fotografía del usuario</h4>
+        <h6 class="card-subtitle"> nombre usuario </h6>
         <img src=''>
-        <input type="file">
+        <input (change)="seleccionImage($event.target.files[0])" type="file">
 
-        <br><br>
-        <button type="submit" class="btn btn-block btn-primary waves-effect waves-light m-r-10"><i class="fa fa-save"></i>
-          Enviar</button>
+        <br>
+        <br>
+
+        <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-primary waves-effect waves-light m-r-10">
+          <i class="fa fa-save"></i>
+          Actualizar Foto
+        </button>s
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs profile-tab" role="tablist">
-
-      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
-
-    </ul>
-
-    <!--second tab-->
-    <div class="tab-pane" id="profile" role="tabpanel">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-3 col-xs-6 b-r"> <strong>Nombre Completo</strong>
-            <br>
-            <p class="text-muted">Johnathan Ramirez</p>
-          </div>
-          <div class="col-md-3 col-xs-6 b-r"> <strong>Telefono</strong>
-            <br>
-            <p class="text-muted">(123) 456 7890</p>
-          </div>
-          <div class="col-md-3 col-xs-6 b-r"> <strong>Email</strong>
-            <br>
-            <p class="text-muted">johnathan@admin.com</p>
-          </div>
-          <div class="col-md-3 col-xs-6"> <strong>Direccion</strong>
-            <br>
-            <p class="text-muted">Queretaro de Arteaga</p>
-          </div>
-        </div>
-        <hr>
-        <p class="m-t-30">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
-          ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras
-          dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
-          consequat vitae, eleifend ac, enim.</p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries </p>
-        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <h4 class="font-medium m-t-30">Progreso en examenes</h4>
-        <hr>
-        <h5 class="m-t-30">Historia 2 <span class="pull-right">80%</span></h5>
-        <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-            style="width:80%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
-        </div>
-        <h5 class="m-t-30">Matematicas 5 <span class="pull-right">90%</span></h5>
-        <div class="progress">
-          <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
-            style="width:90%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
-        </div>
-        <h5 class="m-t-30">Español 4 <span class="pull-right">50%</span></h5>
-        <div class="progress">
-          <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
-            style="width:50%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
-        </div>
-        <h5 class="m-t-30">Ingles 6 <span class="pull-right">70%</span></h5>
-        <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-            style="width:70%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
 </div>

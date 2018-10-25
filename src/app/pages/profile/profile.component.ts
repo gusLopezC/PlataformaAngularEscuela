@@ -10,6 +10,10 @@ import { UsuarioService } from 'src/app/services/services.index';
 export class ProfileComponent implements OnInit {
 
   usuario: Usuario;
+  imagenSubir: File;
+
+
+
   constructor(
     public _usuarioService: UsuarioService
   ) {
@@ -31,4 +35,33 @@ export class ProfileComponent implements OnInit {
       .subscribe();
 
   }
+
+  seleccionImage( archivo: File ) {
+
+    if ( !archivo ) {
+      this.imagenSubir = null;
+      return;
+    }
+    this.imagenSubir = archivo;
+    // if ( archivo.type.indexOf('image') < 0 ) {
+    //   swal('Sólo imágenes', 'El archivo seleccionado no es una imagen', 'error');
+    //   this.imagenSubir = null;
+    //   return;
+    // }
+
+    // this.imagenSubir = archivo;
+
+    // const reader = new FileReader();
+    // const urlImagenTemp = reader.readAsDataURL( archivo );
+
+    // reader.onloadend = () => this.imagenTemp = reader.result;
+
+  }
+
+  cambiarImagen() {
+
+    this._usuarioService.cambiarImagen( this.imagenSubir, this.usuario._id );
+
+  }
+
 }
