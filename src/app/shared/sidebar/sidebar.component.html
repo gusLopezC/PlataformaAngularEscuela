@@ -1,6 +1,11 @@
 <!-- ============================================================== -->
 <!-- Left Sidebar - style you can find in sidebar.scss  -->
 <!-- ============================================================== -->
+<button submit=("v1='ahorcado'") hred="frameActividad"></button>
+
+
+{{v1.name}}
+
 <aside class="left-sidebar">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
@@ -31,7 +36,7 @@
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
-                <li class="nav-small-cap">PERSONAL</li>
+                <li class="nav-small-cap">CONTENIDO</li>
 
 
                 <li *ngFor="let menu of _sidebar.menu">
@@ -40,7 +45,8 @@
                         <span class="hide-menu"> {{ menu.titulo }}
                             <span class="label label-rouded label-themecolor pull-right"> {{ menu.submenu.length }} </span>
                         </span>
-                    </a>
+                 
+   </a>
                     <ul aria-expanded="false" class="collapse">
 
                         <li *ngFor="let submenu of menu.submenu">

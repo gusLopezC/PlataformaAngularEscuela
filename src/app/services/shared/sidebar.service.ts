@@ -8,16 +8,26 @@ export class SidebarService {
   menu: any = [
     {
       titulo: 'Seccion1',
-      icono: 'mdi mid-gauge',
+      icono: 'ti-dashboard',
       submenu: [
-        {titulo: 'Dashboard', url: '/dashboard'},
-        {titulo: 'ProgressBar', url: '/progress'},
-        {titulo: 'Graficass', url: '/graficas1'},
-        {titulo: 'Login', url: '/login'},
-        {titulo: 'Promesas', url: '/promesas'},
-        {titulo: 'Rxjs', url: '/rxjs'},
+        { titulo: 'Dashboard', url: '/dashboard' },
+        { titulo: 'ProgressBar', url: '/progress' },
+        { titulo: 'Graficass', url: '/graficas1' },
+        { titulo: 'Login', url: '/login' },
+        { titulo: 'Promesas', url: '/promesas' },
+        { titulo: 'Rxjs', url: '/rxjs' },
       ]
-    }
+    },
+    {
+      titulo: 'Mantenimiento',
+      icono: 'ti-harddrives',
+      submenu: [
+        { titulo: 'Usuarios', url: '/usuarios' },
+        { titulo: 'Grupos', url: '/grupos' },
+        { titulo: 'Examenes', url: '/examenes' },
+
+      ]
+    },
   ];
   constructor() { }
 }
