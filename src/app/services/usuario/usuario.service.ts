@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class UsuarioService {
   token: string;
 
 
-  constructor(public http: HttpClient, public router: Router) {
+  constructor(public http: HttpClient, public router: Router, public _subirArchivoService: SubirArchivoService) {
     this.cargarStorage();
 
   }
@@ -44,7 +45,7 @@ export class UsuarioService {
     const url = URL_SERVICIOS + '/api/LoginGoogle';
     return this.http.post(url, { tokengoogle }).pipe(
       map((resp: any) => {
-        this.guardarStorage(resp.id, resp.token, resp.seleccionUsuario);
+        this.guardarStorage(resp._id, resp.token, resp.seleccionUsuario);
         return true;
       }));
   }
@@ -75,7 +76,8 @@ export class UsuarioService {
     this.seleccionUsuario = null;
     localStorage.removeItem('token');
     localStorage.removeItem('seleccionUsuario');
-
+    localStorage.removeItem('token');
+    localStorage.removeItem('seleccionUsuario');
     this.router.navigate(['/login']);
 
 
@@ -108,11 +110,32 @@ export class UsuarioService {
       map((resp: any) => {
 
         const usuarioDB: Usuario = resp.usuarioActualizado;
+<<<<<<< HEAD
         console.log(resp.usuarioActualizado);
         this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+=======
+        this.guardarStorage(usuarioDB._id, this.token,  usuario);
+
+>>>>>>> 32f8198d8ad4c9e545f06dff87c5e4ca03dbd928
         swal('Usuario actualizado', usuario.name, 'success');
         return true;
       }));
   }
 
+  cambiarImagen( archivo: File, id: string ) {
+
+    this._subirArchivoService.subirArchivo( archivo, 'usuarios', id )
+          .then( (resp: any) => {
+
+            this.seleccionUsuario.imagen = resp.usuarioActualizado.imagen;
+            swal( 'Imagen Actualizada', this.seleccionUsuario.name, 'success' );
+
+            this.guardarStorage( id, this.token, this.seleccionUsuario );
+
+          })
+          .catch( resp => {
+            console.log( resp );
+          }) ;
+
+  }
 }

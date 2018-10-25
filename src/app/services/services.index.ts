@@ -8,3 +8,6 @@ export { LoginGuardGuard } from './guards/login-guard.guard';
 
 // Servicios de la API
 export { UsuarioService } from './usuario/usuario.service';
+export { SubirArchivoService } from './subir-archivo/subir-archivo.service';
+
+
