@@ -22,6 +22,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 // Pipe Module
 import { PipesModule } from '../pipes/pipes.module';
 import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -44,6 +45,7 @@ import { ProfileComponent } from './profile/profile.component';
     Graficas1Component,
   ],
   imports: [
+    CommonModule,
     SharedModule,
     PAGES_ROUTES,
     FormsModule,

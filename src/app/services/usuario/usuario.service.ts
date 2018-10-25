@@ -110,32 +110,27 @@ export class UsuarioService {
       map((resp: any) => {
 
         const usuarioDB: Usuario = resp.usuarioActualizado;
-<<<<<<< HEAD
-        console.log(resp.usuarioActualizado);
-        this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
-=======
-        this.guardarStorage(usuarioDB._id, this.token,  usuario);
+        this.guardarStorage(usuarioDB._id, this.token, usuario);
 
->>>>>>> 32f8198d8ad4c9e545f06dff87c5e4ca03dbd928
         swal('Usuario actualizado', usuario.name, 'success');
         return true;
       }));
   }
 
-  cambiarImagen( archivo: File, id: string ) {
+  cambiarImagen(archivo: File, id: string) {
 
-    this._subirArchivoService.subirArchivo( archivo, 'usuarios', id )
-          .then( (resp: any) => {
+    this._subirArchivoService.subirArchivo(archivo, 'usuarios', id)
+      .then((resp: any) => {
 
-            this.seleccionUsuario.imagen = resp.usuarioActualizado.imagen;
-            swal( 'Imagen Actualizada', this.seleccionUsuario.name, 'success' );
+        this.seleccionUsuario.imagen = resp.usuarioActualizado.imagen;
+        swal('Imagen Actualizada', this.seleccionUsuario.name, 'success');
 
-            this.guardarStorage( id, this.token, this.seleccionUsuario );
+        this.guardarStorage(id, this.token, this.seleccionUsuario);
 
-          })
-          .catch( resp => {
-            console.log( resp );
-          }) ;
+      })
+      .catch(resp => {
+        console.log(resp);
+      });
 
   }
 }
