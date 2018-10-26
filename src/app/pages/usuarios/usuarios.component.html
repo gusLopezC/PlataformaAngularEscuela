@@ -1,0 +1,73 @@
+<div class="row animated fadeInLeft">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <input #input (keyup)="buscarUsuario(input.value)" type="text" class="form-control" placeholder="Buscar usuario">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row animated fadeInLeft" *ngIf="cargando">
+  <div class="col-12">
+    <div class="alert alert-warning text-center">
+      <strong>Cargando</strong>
+      <br>
+      <i class="fa fa-refresh fa-spin fa-2x"></i>
+      <br>
+      <span>Espere por favor</span>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeInLeft" *ngIf="!cargando">
+  <div class="col-12">
+    <div class="card animated fadeInLeft">
+      <div class="card-body">
+
+        <h4 class="card-title">Usuarios registrados (<small>{{totalRegistros}}</small>)</h4>
+
+        <table class="table table-hover table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Correo</th>
+              <th>Nombre</th>
+              <th>Role</th>
+              <th>Auth</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td class="w70">
+                <img [src]="usuario.imagen | imagen" class="w50 img-circle">
+              </td>
+              <td>{{usuario.email}}</td>
+              <td>{{usuario.name}}</td>
+              <td>
+                <label *ngIf="usuario.role == 'ADMIN_ROLE'" class="label label-danger">Admin</label>
+                <label *ngIf="usuario.role == 'TEACHER_ROLE'" class="label label-info">Teacher</label>
+                <label *ngIf="usuario.role == 'STUDENT_ROLE'" class="label label-success">Alumno</label>
+              </td>
+              <td>
+                <label *ngIf="usuario.google" class="label label-danger">Google</label>
+                <label *ngIf="!usuario.google" class="label label-info">Normal</label>
+              </td>
+              <td>
+                <button class="btn btn-info"><i class="fa fa-save"></i></button>
+                <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button (click)="cambiarDesde(-5)" class="btn btn-secondary">Anteriores</button>
+        <button (click)="cambiarDesde(5)" class="btn btn-secondary">Siguientes</button>
+      </div>
+    </div>
+  </div>
+</div>

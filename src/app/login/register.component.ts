@@ -81,7 +81,8 @@ export class RegisterComponent implements OnInit {
     const usuario = new Usuario(
       this.forma.value.name,
       this.forma.value.email,
-      this.forma.value.password
+      this.forma.value.password,
+      this.forma.value.role = 'TEACHER_ROLE'
     );
 
     this._usuarioService.crearUsuario(usuario)
