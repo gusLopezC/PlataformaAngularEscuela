@@ -28,7 +28,8 @@
     <div class="card animated fadeInLeft">
       <div class="card-body">
 
-        <h4 class="card-title">Usuarios registrados (<small>{{totalRegistros}}</small>)</h4>
+        <h4 class="card-title">Usuarios registrados (
+          <small>{{totalRegistros}}</small>)</h4>
 
         <table class="table table-hover table-bordered table-condensed">
           <thead>
@@ -44,7 +45,7 @@
           <tbody>
             <tr *ngFor="let usuario of usuarios">
               <td class="w70">
-                <img [src]="usuario.imagen | imagen" class="w50 img-circle">
+                <img (click)="mostrarModal(usuario._id)" [src]="usuario.imagen | imagen" class="w50 img-circle pointer">
               </td>
               <td>{{usuario.email}}</td>
               <td>{{usuario.name}}</td>
@@ -64,8 +65,12 @@
                 <label *ngIf="!usuario.google" class="label label-info">Normal</label>
               </td>
               <td>
-                <button (click)="guardarUsuario(usuario)" class="btn btn-info"><i class="fa fa-save"></i></button>
-                <button (click)="borrarUsuario(usuario)" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                <button (click)="guardarUsuario(usuario)" class="btn btn-info">
+                  <i class="fa fa-save"></i>
+                </button>
+                <button (click)="borrarUsuario(usuario)" class="btn btn-danger">
+                  <i class="fa fa-trash-o"></i>
+                </button>
               </td>
             </tr>
           </tbody>

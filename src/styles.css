@@ -18,3 +18,15 @@
 .w50{
     height: 50px;
 }
+
+.oculto {
+    display: none;
+}
+.background-negro{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 9999;
+}
