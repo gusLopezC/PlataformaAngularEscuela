@@ -47,15 +47,13 @@ export class GruposService {
   crearGrupos(nombre: string) {
 
     const url = URL_SERVICIOS + '/api/Grupos';
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    headers = headers.set('Authorization', this._usuarioService.token);
-
-
-    return this.http.post(url, { nombre, headers }).pipe(
+    // let headers = new HttpHeaders();
+    // headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    // headers = headers.set('Authorization', this._usuarioService.token);{ headers }
+    return this.http.post(url, {nombre} ).pipe(
       map((resp: any) => {
-        swal('Usuario creado', resp.grupoGuardado, 'success');
-        return resp.usuario;
+        // swal('Usuario creado', resp.grupoGuardado, 'success');
+        // return resp.usuario;
       }));
   }
 

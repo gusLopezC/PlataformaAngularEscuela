@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body">
 
-        <input #input (keyup)="buscarGrupos(input.value)" type="text" class="form-control" placeholder="Buscar grupo">
+        <input #input (keyup)="buscarGrupos(input.value)" type="text" class="form-control" placeholder="Buscar examen">
 
       </div>
     </div>
@@ -16,10 +16,11 @@
       <div class="card-body">
 
         <div class="text-right">
-          <button (click)="crearGrupo()" type="button" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Crear grupo</button>
+          <button (click)="crearGrupo()" type="button" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i>
+            Crear Actividad</button>
         </div>
 
-        <h3 class="card-title">Grupos registrados (
+        <h3 class="card-title">Examenes registrados (
           <small>{{totalRegistros}}</small>)</h3>
 
         <table class="table table-hover table-bordered table-condensed">
@@ -53,10 +54,6 @@
             </tr>
           </tbody>
         </table>
-
-        <button (click)="cambiarDesde(-5)" class="btn btn-secondary">Anteriores</button>
-        <button (click)="cambiarDesde(5)" class="btn btn-secondary">Siguientes</button>
-
       </div>
     </div>
   </div>

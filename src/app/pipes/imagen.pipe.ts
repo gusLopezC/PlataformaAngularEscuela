@@ -6,12 +6,12 @@ import { URL_SERVICIOS } from '../config/config';
 })
 export class ImagenPipe implements PipeTransform {
 
-  transform(imagen: string, tipo: string = 'usuarios'): any {
+  transform(imagen: string, tipo: string = 'usuario'): any {
 
     let url = URL_SERVICIOS + '/api/img';
 
     if (!imagen) {
-      return url + '/usuarios/xxx';
+      return url + '/usuarios/aaa';
     }
 
     if (imagen.indexOf('https') >= 0) {
@@ -19,19 +19,20 @@ export class ImagenPipe implements PipeTransform {
     }
     switch (tipo) {
 
-      case 'usuarios':
+      case 'usuario':
         url += '/usuarios/' + imagen;
         break;
-      case 'grupos':
+      case 'grupo':
         url += '/grupos/' + imagen;
         break;
-      case 'examenes':
+      case 'examen':
         url += '/examenes/' + imagen;
         break;
       default:
-        url += '/usuarios/xxx';
+        url += '/usuarios/aaa';
 
     }
+    console.log(url);
     return url;
   }
 

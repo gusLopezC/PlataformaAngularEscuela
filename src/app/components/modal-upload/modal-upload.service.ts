@@ -26,6 +26,5 @@ export class ModalUploadService {
     this.oculto = '';
     this.tipo = tipo;
     this.id = id;
-    (<HTMLInputElement>document.getElementById('imagen')).value = '';
   }
 }

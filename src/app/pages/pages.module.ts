@@ -26,6 +26,7 @@ import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { GruposComponent } from './grupos/grupos.component';
+import { ExamenesComponent } from './examenes/examenes.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { GruposComponent } from './grupos/grupos.component';
     ProfileComponent,
     UsuariosComponent,
     ModalUploadComponent,
-    GruposComponent
+    GruposComponent,
+    ExamenesComponent
   ],
   exports: [
     DashboardComponent,

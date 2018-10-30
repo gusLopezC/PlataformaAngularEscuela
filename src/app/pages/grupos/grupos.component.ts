@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GruposService } from '../../services/services.index';
 import { Grupos } from '../../models/grupos.model';
+import { ModalUploadService } from 'src/app/components/modal-upload/modal-upload.service';
 declare var swal: any;
 
 @Component({
@@ -13,10 +14,12 @@ export class GruposComponent implements OnInit {
   grupos: Grupos[] = [];
   totalRegistros: number = 0;
   cargando: boolean = true;
-  constructor(public _gruposService: GruposService) { }
+  constructor(public _gruposService: GruposService,
+    public _modalUploadService: ModalUploadService) { }
 
   ngOnInit() {
     this.cargarGrupos();
+    this._modalUploadService.notificacion.subscribe(() => this.cargarGrupos());
   }
 
   cargarGrupos() {
@@ -44,7 +47,7 @@ export class GruposComponent implements OnInit {
 
   guardarGrupo(grupo: Grupos) {
 
-  this._gruposService.actualizarGrupos(grupo).subscribe();
+    this._gruposService.actualizarGrupos(grupo).subscribe();
   }
 
   borrarGrupo(grupo: Grupos) {
@@ -62,7 +65,6 @@ export class GruposComponent implements OnInit {
 
           this._gruposService.borrarGrupos(grupo._id)
             .subscribe(borrado => {
-              console.log(borrado);
               this.cargarGrupos();
             });
 
@@ -71,4 +73,24 @@ export class GruposComponent implements OnInit {
       });
   }
 
+  crearGrupo() {
+    swal({
+      title: 'Crear Grupo',
+      text: 'Ingrese nombre del grupo',
+      content: 'input',
+      icon: 'info',
+      buttons: true,
+      dangerMode: true
+    }).then((valor: string) => {
+      if (!valor || valor.length === 0) {
+        return;
+      }
+
+      this._gruposService.crearGrupos(valor).subscribe(() => this.cargarGrupos());
+
+    });
+  }
+  actualizarImagen(grupo: Grupos) {
+    this._modalUploadService.mostrarModal('grupos', grupo._id);
+  }
 }

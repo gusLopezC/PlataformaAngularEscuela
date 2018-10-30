@@ -10,7 +10,8 @@ import {
   UsuarioService,
   LoginGuardGuard,
   SubirArchivoService,
-  GruposService
+  GruposService,
+  ExamenesService
 } from './services.index';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {
     LoginGuardGuard,
     SubirArchivoService,
     ModalUploadService,
-    GruposService
+    GruposService,
+    ExamenesService
   ],
   declarations: []
 })

@@ -11,6 +11,8 @@ import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { GruposComponent } from './grupos/grupos.component';
+import { ExamenComponent } from './examenes/examen.component';
+import { ExamenesComponent } from './examenes/examenes.component';
 
 
 
@@ -33,6 +35,8 @@ const pagesRoutes: Routes = [
             // Contenido
             { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento Usuarios' } },
             { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
+            { path: 'examenes', component: ExamenesComponent, data: { titulo: 'Mantenimiento Examenes' } },
+            { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
     },

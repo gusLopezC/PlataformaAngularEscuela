@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ExamenComponent } from './pages/examenes/examen.component';
 
 // temporal
 
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    ExamenComponent,
   ],
   imports: [
     BrowserModule,

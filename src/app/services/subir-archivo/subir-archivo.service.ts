@@ -32,7 +32,7 @@ export class SubirArchivoService {
 
         }
       };
-
+      console.log(tipo, id);
       const url = URL_SERVICIOS + '/api/upload/' + tipo + '/' + id;
 
       xhr.open('PUT', url, true);
