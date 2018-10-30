@@ -10,6 +10,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { GruposComponent } from './grupos/grupos.component';
 
 
 
@@ -30,7 +31,8 @@ const pagesRoutes: Routes = [
 
 
             // Contenido
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' } },
+            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento Usuarios' } },
+            { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
     },

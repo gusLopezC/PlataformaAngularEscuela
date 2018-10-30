@@ -17,16 +17,16 @@ export class BreadcrumbsComponent implements OnInit {
   * para que cambie cada vez que se cambie de pagina.
   */
 
-  titulo: string;
+  label: string;
   constructor(private router: Router, private title: Title, private meta: Meta) {
 
     this.getDataRoute().subscribe(data => {
-      this.titulo = data.titulo;
-      this.title.setTitle(this.titulo);
+      this.label = data.titulo;
+      this.title.setTitle(this.label);
 
       const metaTag: MetaDefinition = {
         name: 'description',
-        content: this.titulo
+        content: this.label
       };
       this.meta.updateTag( metaTag);
     });
