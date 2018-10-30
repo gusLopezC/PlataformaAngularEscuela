@@ -74,11 +74,12 @@ export class GruposService {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     headers = headers.set('Authorization', this._usuarioService.token);
-    console.log(url, grupos, { headers });
+
 
     return this.http.put(url, grupos, { headers }).pipe(
       map((resp: any) => {
-        console.log(resp);
+        swal('Grupo Actualizado', grupos.nombre, 'success');
+        return resp.grupoActualizado;
       }));
   }
 

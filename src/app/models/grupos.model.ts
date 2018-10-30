@@ -1,14 +1,10 @@
 export class  Grupos {
 
     constructor(
-        public name: string,
-        public email: string,
-        public password: string,
+        public nombre: string,
+        public descripcion: string,
         public imagen?: string,
-        public escuela?: string,
-        public serial?: string,
-        public role?: string,
-        public google?: boolean,
+        public usuario?: string,
         public _id?: string,
 
     ) { }
