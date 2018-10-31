@@ -32,7 +32,7 @@ export class ImagenPipe implements PipeTransform {
         url += '/usuarios/aaa';
 
     }
-    console.log(url);
+   // console.log(url);
     return url;
   }
 
