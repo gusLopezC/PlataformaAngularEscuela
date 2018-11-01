@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { URL_SERVICIOS } from 'src/app/config/config';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { UsuarioService } from '../usuario/usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class ExamenesService {
 
   totalExamenes: number = 0;
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public _usuarioService: UsuarioService) { }
 
   cargarExamen() {
 
@@ -27,4 +28,19 @@ export class ExamenesService {
     return this.http.get(url).pipe(
       map((resp: any) => resp.examenes ));
   }
+
+  borrarExamen(id: string) {
+
+    const url = URL_SERVICIOS + '/api/Examenes/' + id;
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    headers = headers.set('Authorization', this._usuarioService.token);
+
+    return this.http.delete(url, { headers }).pipe(
+      map((resp: any) => {
+        swal('Examen Eliminado', 'El grupo se elimino correctamente', 'success');
+        return true;
+      }));
+  }
+
 }

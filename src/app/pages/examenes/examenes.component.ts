@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Examenes } from 'src/app/models/examenes.model';
 import { ExamenesService } from '../../services/services.index';
-
+declare var swal: any;
+ 
 @Component({
   selector: 'app-examenes',
   templateUrl: './examenes.component.html',
@@ -21,9 +22,11 @@ export class ExamenesComponent implements OnInit {
   }
 
   cargarExamenes() {
+    this.cargando = true;
     this._examenesService.cargarExamen().subscribe(resp => {
       this.totalRegistros = resp.total;
       this.examenes = resp.mostrandoExamen;
+      this.cargando = false;
     });
 
   }
@@ -38,5 +41,27 @@ export class ExamenesComponent implements OnInit {
       this.examenes = examenes,
       this.cargando = false;
     });
+  }
+
+  borrarExamen(examenes: Examenes) {
+    swal({
+      title: '¿Esta seguro?',
+      text: 'Esta a punto de borrar a ',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    })
+      .then(borrar => {
+
+        if (borrar) {
+
+          this._examenesService.borrarExamen(examenes._id)
+            .subscribe(borrado => {
+              this.cargarExamenes();
+            });
+
+        }
+
+      });
   }
 }
