@@ -42,7 +42,7 @@
                 <img (click)="actualizarImagen(examen._id)" [src]="examen.imagen | imagen" class="w50 img-circle pointer">
               </td>
               <td>{{examen.nombre}}</td>
-              <td>{{examen.grupo}}</td>
+              <td>{{examen.grupo.nombre}}</td>
               <td>{{examen.licencia}}</td>
               <td style="text-align:center;">
                   <button class="btn btn-warning">

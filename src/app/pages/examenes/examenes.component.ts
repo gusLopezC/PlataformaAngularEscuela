@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Examenes } from 'src/app/models/examenes.model';
 import { ExamenesService } from '../../services/services.index';
 declare var swal: any;
- 
+
 @Component({
   selector: 'app-examenes',
   templateUrl: './examenes.component.html',

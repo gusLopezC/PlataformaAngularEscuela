@@ -1,7 +1,7 @@
 export class  Examenes {
 
     constructor(
-        public nombre: string,
+        public nombre?: string,
         public imagen?: string,
         public licencia?: string,
         public desbloquear?: boolean,

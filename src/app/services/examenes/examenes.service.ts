@@ -3,6 +3,7 @@ import { URL_SERVICIOS } from 'src/app/config/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
+import { Examenes } from 'src/app/models/examenes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,19 @@ export class ExamenesService {
         return true;
       }));
   }
+
+
+  guardarExamen(examen: Examenes) {
+
+    const idUser = localStorage.getItem('_id');
+    examen.usuario = idUser;
+
+    const url = URL_SERVICIOS + '/api/Examenes/';
+    return this.http.post(url, examen).pipe(
+      map((resp: any) => {
+        swal('Médico Actualizado', examen.nombre, 'success');
+        return resp.examenGuardado;
+      }));
+    }
 
 }
