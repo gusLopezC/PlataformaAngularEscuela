@@ -90,7 +90,8 @@ export class GruposComponent implements OnInit {
 
     });
   }
-  actualizarImagen(grupo: Grupos) {
-    this._modalUploadService.mostrarModal('grupos', grupo._id);
+  actualizarImagen(grupo: string) {
+    console.log('actImagen', grupo);
+    this._modalUploadService.mostrarModal('grupos', grupo);
   }
 }

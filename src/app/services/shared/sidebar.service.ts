@@ -7,18 +7,6 @@ export class SidebarService {
 
   menu: any = [
     {
-      titulo: 'Seccion1',
-      icono: 'ti-dashboard',
-      submenu: [
-        { titulo: 'Dashboard', url: '/dashboard' },
-        { titulo: 'ProgressBar', url: '/progress' },
-        { titulo: 'Graficass', url: '/graficas1' },
-        { titulo: 'Login', url: '/login' },
-        { titulo: 'Promesas', url: '/promesas' },
-        { titulo: 'Rxjs', url: '/rxjs' },
-      ]
-    },
-    {
       titulo: 'Mantenimiento',
       icono: 'ti-harddrives',
       submenu: [

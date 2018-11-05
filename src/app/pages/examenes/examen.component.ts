@@ -4,6 +4,8 @@ import { Grupos } from '../../models/grupos.model';
 import { Examenes } from 'src/app/models/examenes.model';
 import { ExamenesService } from '../../services/services.index';
 import { GruposService } from '../../services/services.index';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-examen',
@@ -13,10 +15,13 @@ import { GruposService } from '../../services/services.index';
 export class ExamenComponent implements OnInit {
 
   grupos: Grupos[] = [];
-  examen: Examenes = new Examenes();
+  examen: Examenes = new Examenes('', '', '', null, null, '', '', '');
+  grupo: Grupos = new Grupos('', '', '', '', '');
 
-  constructor(public __examenService: ExamenesService,
-    public _gruposService: GruposService) { }
+  constructor(
+    public __examenService: ExamenesService,
+    public _gruposService: GruposService,
+    public router: Router) { }
 
   ngOnInit() {
     this._gruposService.cargarGrupos().subscribe(grupos => {
@@ -30,8 +35,13 @@ export class ExamenComponent implements OnInit {
       return;
     }
 
-    this.__examenService.guardarExamen(this.examen).subscribe(resp =>  {
-      console.log(resp);
+    this.__examenService.guardarExamen(this.examen).subscribe(examen => {
+      console.log(examen);
     });
+  }
+
+  cambioGrupo(id: string) {
+
+    this._gruposService.obtenerGrupos(id).subscribe(grupos => this.grupos = grupos);
   }
 }
