@@ -4,7 +4,7 @@ import { Grupos } from '../../models/grupos.model';
 import { Examenes } from 'src/app/models/examenes.model';
 import { ExamenesService } from '../../services/services.index';
 import { GruposService } from '../../services/services.index';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -21,7 +21,17 @@ export class ExamenComponent implements OnInit {
   constructor(
     public __examenService: ExamenesService,
     public _gruposService: GruposService,
-    public router: Router) { }
+    public router: Router,
+    public activatedRoute: ActivatedRoute) {
+
+    activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+
+      if (id !== 'nuevo') {
+        this.obtenerExamen(id);
+      }
+    });
+  }
 
   ngOnInit() {
     this._gruposService.cargarGrupos().subscribe(grupos => {
@@ -29,6 +39,14 @@ export class ExamenComponent implements OnInit {
     });
   }
 
+  obtenerExamen(id: string) {
+    this.__examenService.obtenerExamen(id).subscribe(examen => {
+      console.log(examen);
+      this.examen = examen;
+      this.examen.grupo = examen.grupo._id;
+      this.cambioGrupo(this.examen.grupo);
+    });
+  }
 
   guardarExamen(f: NgForm) {
     if (f.invalid) {
@@ -37,11 +55,13 @@ export class ExamenComponent implements OnInit {
 
     this.__examenService.guardarExamen(this.examen).subscribe(examen => {
       console.log(examen);
+      this.examen._id = examen._id;
+      this.router.navigate(['/examen', examen._id]);
     });
   }
 
   cambioGrupo(id: string) {
 
-    this._gruposService.obtenerGrupos(id).subscribe(grupos => this.grupos = grupos);
+    this._gruposService.obtenerGrupos(id).subscribe(grupos =>  this.grupos = grupos);
   }
 }

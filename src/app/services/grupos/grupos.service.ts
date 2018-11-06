@@ -25,7 +25,6 @@ export class GruposService {
     return this.http.get(url).pipe(
 
       map((resp: any) => {
-        console.log(resp);
         this.totalGrupos = resp.total;
         return resp;
       }

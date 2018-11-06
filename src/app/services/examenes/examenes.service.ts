@@ -17,17 +17,27 @@ export class ExamenesService {
 
     const url = URL_SERVICIOS + '/api/Examenes';
     return this.http.get(url).pipe(
-      map( (resp: any) => {
-          this.totalExamenes = resp.total;
-          return resp;
-      }) );
+      map((resp: any) => {
+        this.totalExamenes = resp.total;
+        return resp;
+      }));
   }
 
   buscarExamen(termino: string) {
     const url = URL_SERVICIOS + '/api/coleccion/examenes/' + termino;
 
     return this.http.get(url).pipe(
-      map((resp: any) => resp.examenes ));
+      map((resp: any) => resp.examenes));
+  }
+
+  obtenerExamen(id: string) {
+    const url = URL_SERVICIOS + '/api/BuscarExamen/' + id;
+    return this.http.get(url).pipe(
+
+      map((resp: any) => {
+        return resp.examen;
+      }
+      ));
   }
 
   borrarExamen(id: string) {
@@ -50,12 +60,26 @@ export class ExamenesService {
     const idUser = localStorage.getItem('_id');
     examen.usuario = idUser;
 
-    const url = URL_SERVICIOS + '/api/Examenes/';
-    return this.http.post(url, examen).pipe(
-      map((resp: any) => {
-        swal('Médico Actualizado', examen.nombre, 'success');
-        return resp.examenGuardado;
-      }));
+    let url = URL_SERVICIOS + '/api/Examenes/';
+
+    if (examen._id) {
+      // actualizando
+      url += '/' + examen._id;
+
+      return this.http.put(url, examen).pipe(
+        map((resp: any) => {
+          swal('Médico Actualizado', examen.nombre, 'success');
+          return resp.examenGuardado;
+        }));
+
+    } else {
+      // creando
+      return this.http.post(url, examen).pipe(
+        map((resp: any) => {
+          swal('Médico Creado', examen.nombre, 'success');
+          return resp.examenGuardado;
+        }));
     }
+  }
 
 }

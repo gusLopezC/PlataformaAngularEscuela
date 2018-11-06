@@ -1,48 +1,36 @@
-<div class="row animated fadeIn">
-  <div class="col-md-6">
+<div class="row animated fadeInLeft">
+  <div class="col-md-12">
     <div class="card card-body">
       <div class="row">
         <div class="col-sm-12 col-xs-12">
-         
+
           <h4 class="box-title m-b-0">Actualizar Examen {{examen.nombre}}</h4><br>
-          <form  ngNativeValidate #f="ngForm" class="form-horizontal" (ngSubmit)="guardarExamen(f)">
+          <form ngNativeValidate #f="ngForm" class="form-horizontal" (ngSubmit)="guardarExamen(f)">
             <div class="form-group">
               <label>Nombre del Examen</label>
-              <input [(ngModel)]="examen.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del Examen" required>
+              <input [(ngModel)]="examen.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del Examen"
+                required>
             </div>
             <div class="form-group">
               <label>Licencia</label>
-              <input [(ngModel)]="examen.licencia" name="licencia" type="text" class="form-control" placeholder="Ingrese una licencia valida" required>
+              <input [(ngModel)]="examen.licencia" name="licencia" type="text" class="form-control" placeholder="Ingrese una licencia valida"
+                required>
             </div>
             <div class="form-group">
               <label>Asignar a Grupo:</label>
-                <select (change)="cambioGrupo( $event.target.value)" [(ngModel)]="examen.grupo" name="grupo" class="form-control" required>
-                  <option value="">Seleccione Grupo</option>
-                  <option *ngFor="let grupo of grupos" [value]="grupo._id">
-                      {{ grupo.nombre }}
-                    </option>
-                </select>
+              <select (change)="cambioGrupo( $event.target.value)" [(ngModel)]="examen.grupo" name="grupo" class="form-control"
+                required>
+                <option value="">Seleccione Grupo</option>
+                <option *ngFor="let grupo of grupos" [value]="grupo._id">
+                  {{ grupo.nombre }}
+                </option>
+              </select>
             </div>
-            
+
             <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Enviar</button>
-            <button [routerLink]="['/examenes']" routerLinkActive="router-link-active"  class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+            <a [routerLink]="['/examenes']" routerLinkActive="router-link-active" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
           </form>
         </div>
       </div>
     </div>
-
   </div>
-  <div class="col-md-3">
-    <div class="card card-body">
-      <h4 class="box-title m-b-0">Grupo</h4>
-     <img [src]="grupo.imagen">
-    </div>
-  </div>
-
-  <div class="col-md-3" *ngIf="examen._id">
-    <div class="card card-body">
-      <h4 class="box-title m-b-0">Fotografía</h4>
-      <img [src]="examen.imagen ">
-    </div>
-  </div>
-</div>
