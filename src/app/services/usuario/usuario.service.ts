@@ -13,20 +13,22 @@ export class UsuarioService {
 
   seleccionUsuario: Usuario;
   token: string;
-
+  menu: any[] = [];
 
   constructor(public http: HttpClient, public router: Router, public _subirArchivoService: SubirArchivoService) {
     this.cargarStorage();
 
   }
 
-  guardarStorage(id: string, token: string, seleccionUsuario: Usuario) {
+  guardarStorage(id: string, token: string, seleccionUsuario: Usuario, menu: any) {
     localStorage.setItem('_id', seleccionUsuario._id);
     localStorage.setItem('token', token);
     localStorage.setItem('seleccionUsuario', JSON.stringify(seleccionUsuario));
+    localStorage.setItem('menu', JSON.stringify(menu));
 
     this.seleccionUsuario = seleccionUsuario;
     this.token = token;
+    this.menu = menu;
   }
 
   cargarStorage() {
@@ -34,9 +36,11 @@ export class UsuarioService {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
       this.seleccionUsuario = JSON.parse(localStorage.getItem('seleccionUsuario'));
+      this.menu = JSON.parse(localStorage.getItem('menu'));
     } else {
       this.token = '';
       this.seleccionUsuario = null;
+      this.menu = [null];
     }
   }
 
@@ -45,7 +49,8 @@ export class UsuarioService {
     const url = URL_SERVICIOS + '/api/LoginGoogle';
     return this.http.post(url, { tokengoogle }).pipe(
       map((resp: any) => {
-        this.guardarStorage(resp._id, resp.token, resp.seleccionUsuario);
+        this.guardarStorage(resp._id, resp.token, resp.seleccionUsuario, resp.menu);
+        console.log(resp);
         return true;
       }));
   }
@@ -61,11 +66,8 @@ export class UsuarioService {
     const url = URL_SERVICIOS + '/api/Login';
     return this.http.post(url, usuario).pipe(
       map((resp: any) => {
-        this.guardarStorage(resp.id, resp.token, resp.seleccionUsuario);
-        // localStorage.setItem('id', resp.id);
-        // localStorage.setItem('token', resp.token);
-        // localStorage.setItem('seleccionUsuario', JSON.stringify(resp.seleccionUsuario));
-
+        this.guardarStorage(resp.id, resp.token, resp.seleccionUsuario, resp.menu);
+        console.log(resp);
         return true;
       }));
 
@@ -74,13 +76,13 @@ export class UsuarioService {
   logout() {
     this.token = '';
     this.seleccionUsuario = null;
+    this.menu = [];
+
     localStorage.removeItem('token');
     localStorage.removeItem('seleccionUsuario');
-    localStorage.removeItem('token');
-    localStorage.removeItem('seleccionUsuario');
+    localStorage.removeItem('menu');
+
     this.router.navigate(['/login']);
-
-
   }
 
   crearUsuario(usuario: Usuario) {
@@ -111,7 +113,7 @@ export class UsuarioService {
 
         if (usuario._id === this.seleccionUsuario._id) {
           const usuarioDB: Usuario = resp.usuarioActualizado;
-          this.guardarStorage(usuarioDB._id, this.token, usuario);
+          this.guardarStorage(usuarioDB._id, this.token, usuario, this.menu);
         }
 
         swal('Usuario actualizado', usuario.name, 'success');
@@ -127,7 +129,7 @@ export class UsuarioService {
         this.seleccionUsuario.imagen = resp.usuarioActualizado.imagen;
         swal('Imagen Actualizada', this.seleccionUsuario.name, 'success');
 
-        this.guardarStorage(id, this.token, this.seleccionUsuario);
+        this.guardarStorage(id, this.token, this.seleccionUsuario, this.menu);
 
       })
       .catch(resp => {

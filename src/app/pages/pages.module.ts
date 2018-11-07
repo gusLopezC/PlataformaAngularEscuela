@@ -27,6 +27,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { GruposComponent } from './grupos/grupos.component';
 import { ExamenesComponent } from './examenes/examenes.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ExamenesComponent } from './examenes/examenes.component';
     UsuariosComponent,
     ModalUploadComponent,
     GruposComponent,
-    ExamenesComponent
+    ExamenesComponent,
+    BusquedaComponent
   ],
   exports: [
     DashboardComponent,

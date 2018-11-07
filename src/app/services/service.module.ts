@@ -9,6 +9,7 @@ import {
   SharedService,
   UsuarioService,
   LoginGuardGuard,
+  AdminGuard,
   SubirArchivoService,
   GruposService,
   ExamenesService
@@ -24,6 +25,7 @@ import {
     SharedService,
     UsuarioService,
     LoginGuardGuard,
+    AdminGuard,
     SubirArchivoService,
     ModalUploadService,
     GruposService,
