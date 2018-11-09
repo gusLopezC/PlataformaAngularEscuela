@@ -12,7 +12,7 @@ export class NopagefoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    init_plufins();
+   // init_plufins();
   }
 
 }
