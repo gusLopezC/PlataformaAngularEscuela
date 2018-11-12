@@ -4,21 +4,19 @@ import { NgModule } from '@angular/core';
 // Rutas
 import { APP_ROUTES } from './app.routes';
 
-// Modules
-import { PagesModule } from './pages/pages.module';
+// temporal
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Servicios
 import { ServiceModule } from './services/service.module';
 
-
+// Modules
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+import { SharedModule } from './shared/shared.module';
+import { PagesComponent } from './pages/pages.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ExamenComponent } from './pages/examenes/examen.component';
-
-// temporal
 
 
 
@@ -27,15 +25,15 @@ import { ExamenComponent } from './pages/examenes/examen.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ExamenComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

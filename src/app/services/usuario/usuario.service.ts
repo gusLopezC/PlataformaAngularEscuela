@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
+import {throwError } from 'rxjs/internal/observable/throwError';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
+import 'rxjs/add/operator/catch';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +71,11 @@ export class UsuarioService {
         this.guardarStorage(resp.id, resp.token, resp.seleccionUsuario, resp.menu);
         console.log(resp);
         return true;
+      }),
+      catchError( error => {
+        console.log(error.error.mensaje);
+        swal('Usuario o contraseña incorrecta', error.error.mensaje, 'error');
+      return throwError(error);
       }));
 
   }
@@ -92,6 +99,12 @@ export class UsuarioService {
       map((resp: any) => {
         swal('Usuario creado', usuario.email, 'success');
         return resp.usuario;
+      })
+      ,
+      catchError( error => {
+        console.log(error.error.mensaje);
+        swal('No se a podido guardar el usuario', error.error.mensaje, 'error');
+      return throwError(error);
       }));
   }
 

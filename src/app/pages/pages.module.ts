@@ -28,11 +28,12 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
 import { GruposComponent } from './grupos/grupos.component';
 import { ExamenesComponent } from './examenes/examenes.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { ExamenComponent } from './examenes/examen.component';
 
 
 @NgModule({
   declarations: [
-    PagesComponent,
+   // PagesComponent,
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
@@ -43,9 +44,10 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     RxjsComponent,
     ProfileComponent,
     UsuariosComponent,
-    ModalUploadComponent,
+   // ModalUploadComponent,
     GruposComponent,
     ExamenesComponent,
+    ExamenComponent,
     BusquedaComponent
   ],
   exports: [

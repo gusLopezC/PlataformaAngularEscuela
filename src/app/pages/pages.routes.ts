@@ -21,28 +21,21 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 
 const pagesRoutes: Routes = [
 
-    {
-        path: '',
-        component: PagesComponent,
-        canActivate: [LoginGuardGuard],
-        children: [
-            { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
-            { path: 'progress', component: ProgressComponent, data: { titulo: 'Progreso' } },
-            { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' } },
-            { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
-            { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
-            { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes' } },
-            { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
-            { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Busqueda' } },
+    { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+    { path: 'progress', component: ProgressComponent, data: { titulo: 'Progreso' } },
+    { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' } },
+    { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
+    { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
+    { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes' } },
+    { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
+    { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Busqueda' } },
 
-            // Contenido
-            { path: 'usuarios', component: UsuariosComponent, canActivate: [AdminGuard], data: { titulo: 'Mantenimiento Usuarios' } },
-            { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
-            { path: 'examenes', component: ExamenesComponent, data: { titulo: 'Mantenimiento Examenes' } },
-            { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
-            { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-        ]
-    },
+    // Contenido
+    { path: 'usuarios', component: UsuariosComponent, canActivate: [AdminGuard], data: { titulo: 'Mantenimiento Usuarios' } },
+    { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
+    { path: 'examenes', component: ExamenesComponent, data: { titulo: 'Mantenimiento Examenes' } },
+    { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
 ];
 export const PAGES_ROUTES = RouterModule.forChild(pagesRoutes);
