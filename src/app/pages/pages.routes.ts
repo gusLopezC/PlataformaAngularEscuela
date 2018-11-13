@@ -15,6 +15,8 @@ import { GruposComponent } from './grupos/grupos.component';
 import { ExamenComponent } from './examenes/examen.component';
 import { ExamenesComponent } from './examenes/examenes.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { GatoComponent } from './gato/gato.component';
+import { SnakeComponent } from './snake/snake.component';
 
 
 
@@ -22,9 +24,6 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 const pagesRoutes: Routes = [
 
     { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
-    { path: 'progress', component: ProgressComponent, data: { titulo: 'Progreso' } },
-    { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' } },
-    { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' } },
     { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
     { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes' } },
     { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
@@ -35,6 +34,19 @@ const pagesRoutes: Routes = [
     { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
     { path: 'examenes', component: ExamenesComponent, data: { titulo: 'Mantenimiento Examenes' } },
     { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
+
+
+    // Informes
+    { path: 'informes', component: GatoComponent, data: { titulo: 'Informes' } },
+    { path: 'informesstudent', component: GatoComponent, data: { titulo: 'Informes Student' } },
+
+    // Juegos
+    { path: 'gato', component: GatoComponent, data: { titulo: 'Gato' } },
+    { path: 'gatoversus', component: SnakeComponent, data: { titulo: 'Gato Versus' } },
+    { path: 'snake', component: SnakeComponent, data: { titulo: 'Snake' } },
+    { path: 'recuerdacolores', component: SnakeComponent, data: { titulo: 'Recuerdacolores' } },
+    { path: 'ahorcado', component: SnakeComponent, data: { titulo: 'Ahorcado' } },
+
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
 ];

@@ -6,7 +6,6 @@ import { PagesComponent } from './pages.component';
 import {FormsModule} from '@angular/forms';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { PAGES_ROUTES } from './pages.routes';
 import { ChartsModule } from 'ng2-charts';
@@ -14,7 +13,6 @@ import { ChartsModule } from 'ng2-charts';
 
 
 // Temporal
-import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
@@ -29,15 +27,20 @@ import { GruposComponent } from './grupos/grupos.component';
 import { ExamenesComponent } from './examenes/examenes.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ExamenComponent } from './examenes/examen.component';
+import { SnakeComponent } from './snake/snake.component';
+import { GatoComponent } from './gato/gato.component';
+import { GatoversusComponent } from './gatoversus/gatoversus.component';
+import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { InformesComponent } from './informes/informes.component';
+import { InformesstudentComponent } from './informesstudent/informesstudent.component';
 
 
 @NgModule({
   declarations: [
    // PagesComponent,
     DashboardComponent,
-    ProgressComponent,
     Graficas1Component,
-    IncrementadorComponent,
     GraficoDonaComponent,
     AccountSettingsComponent,
     PromesasComponent,
@@ -48,11 +51,17 @@ import { ExamenComponent } from './examenes/examen.component';
     GruposComponent,
     ExamenesComponent,
     ExamenComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    SnakeComponent,
+    GatoComponent,
+    GatoversusComponent,
+    RecuerdacoloresComponent,
+    AhorcadoComponent,
+    InformesComponent,
+    InformesstudentComponent
   ],
   exports: [
     DashboardComponent,
-    ProgressComponent,
     Graficas1Component,
   ],
   imports: [
