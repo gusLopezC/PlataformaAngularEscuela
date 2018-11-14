@@ -2,11 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
-import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { PromesasComponent } from './promesas/promesas.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/services.index';
 import { AdminGuard } from '../services/services.index';
 import { ProfileComponent } from './profile/profile.component';
@@ -24,7 +20,6 @@ import { SnakeComponent } from './snake/snake.component';
 const pagesRoutes: Routes = [
 
     { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
-    { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
     { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes' } },
     { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario' } },
     { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Busqueda' } },
