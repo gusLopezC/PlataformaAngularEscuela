@@ -15,6 +15,11 @@ import { GatoComponent } from './gato/gato.component';
 import { SnakeComponent } from './snake/snake.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
 import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
+import { FormularioCreaActividadComponent } from './formulario-crea-actividad/formulario-crea-actividad.component';
+import { CompartiractividadComponent } from './compartiractividad/compartiractividad.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.component';
+import { GatoversusComponent } from './gatoversus/gatoversus.component';
 
 
 
@@ -35,7 +40,8 @@ const pagesRoutes: Routes = [
     // Actividades
     { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'misactividades' } },
     { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'creaactividades' } },
-
+    { path: 'formulario-crea-actividad', component: FormularioCreaActividadComponent, data: { titulo: 'formulario-crea-actividad' } },
+    { path: 'compartiractividad', component: CompartiractividadComponent, data: { titulo: 'Compartiractividad' } },
 
     // Informes
     { path: 'informes', component: GatoComponent, data: { titulo: 'Informes' } },
@@ -43,10 +49,10 @@ const pagesRoutes: Routes = [
 
     // Juegos
     { path: 'gato', component: GatoComponent, data: { titulo: 'Gato' } },
-    { path: 'gatoversus', component: SnakeComponent, data: { titulo: 'Gato Versus' } },
+    { path: 'gatoversus', component: GatoversusComponent, data: { titulo: 'Gato Versus' } },
     { path: 'snake', component: SnakeComponent, data: { titulo: 'Snake' } },
-    { path: 'recuerdacolores', component: SnakeComponent, data: { titulo: 'Recuerdacolores' } },
-    { path: 'ahorcado', component: SnakeComponent, data: { titulo: 'Ahorcado' } },
+    { path: 'recuerdacolores', component: RecuerdacoloresComponent, data: { titulo: 'Recuerdacolores' } },
+    { path: 'ahorcado', component: AhorcadoComponent, data: { titulo: 'Ahorcado' } },
 
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
