@@ -13,6 +13,8 @@ import { ExamenesComponent } from './examenes/examenes.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { GatoComponent } from './gato/gato.component';
 import { SnakeComponent } from './snake/snake.component';
+import { MisactividadesComponent } from './misactividades/misactividades.component';
+import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
 
 
 
@@ -29,6 +31,10 @@ const pagesRoutes: Routes = [
     { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
     { path: 'examenes', component: ExamenesComponent, data: { titulo: 'Mantenimiento Examenes' } },
     { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
+
+    // Actividades
+    { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'misactividades' } },
+    { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'creaactividades' } },
 
 
     // Informes

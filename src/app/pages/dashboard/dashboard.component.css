@@ -1,0 +1,50 @@
+.card{
+    background-color: #f4f6f9;
+}
+#matematicas{
+    height: 150px;
+    width: 350px;
+    background-image: url(../../../assets/images/matematicas.jpg);
+    color: white;
+    opacity: 0.9;
+   font-family: 'Spicy Rice', cursive;
+    font-size: 35px;
+    
+    
+}
+#espanol{
+    margin-left: 550px;
+    margin-top: -150px;
+    height: 150px;
+    width: 350px;
+    background-image: url(../../../assets/images/espanol.jpg);
+    background-size: contain;
+    color: black;
+    opacity: 0.9;
+    font-family: 'Spicy Rice', cursive;
+    font-size: 35px;
+    
+}
+#ciencias{
+    margin-top: 100px;
+    height: 150px;
+    width: 350px;
+    background-image: url(../../../assets/images/Ciencias.jpg);
+    background-size: contain;
+    color: white;
+    opacity: 0.9;
+    font-family: 'Spicy Rice', cursive;
+    font-size: 35px;
+}
+#historia{
+    margin-left: 550px;
+    margin-top: -150px;
+    height: 150px;
+    width: 350px;
+    background-image: url(../../../assets/images/historia.jpg);
+    background-size: contain;
+    color: black;
+    opacity: 0.9;
+    font-family: 'Spicy Rice', cursive;
+    font-size: 35px;
+}

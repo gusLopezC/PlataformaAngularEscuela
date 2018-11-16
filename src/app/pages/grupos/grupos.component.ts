@@ -14,6 +14,8 @@ export class GruposComponent implements OnInit {
   grupos: Grupos[] = [];
   totalRegistros: number = 0;
   cargando: boolean = true;
+  cargarusuarios: boolean = true;
+  mostrarCalificaciones: boolean = true;
   constructor(public _gruposService: GruposService,
     public _modalUploadService: ModalUploadService) { }
 
@@ -93,5 +95,22 @@ export class GruposComponent implements OnInit {
   actualizarImagen(grupo: string) {
     console.log('actImagen', grupo);
     this._modalUploadService.mostrarModal('grupos', grupo);
+  }
+
+  mostrarCargarUsuarios(cargarusuarios) {
+    if (cargarusuarios) {
+      this.cargarusuarios = false;
+    } else {
+      swal('Usuario cargados', '30 alumos guardados', 'success');
+      this.cargarusuarios = true;
+    }
+  }
+
+  mostrarCargarCalificaciones(mostrarCalificaciones) {
+    if (mostrarCalificaciones) {
+      this.mostrarCalificaciones = false;
+    } else {
+      this.mostrarCalificaciones = true;
+    }
   }
 }

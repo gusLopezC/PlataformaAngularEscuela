@@ -28,6 +28,8 @@ import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.comp
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { InformesComponent } from './informes/informes.component';
 import { InformesstudentComponent } from './informesstudent/informesstudent.component';
+import { MisactividadesComponent } from './misactividades/misactividades.component';
+import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { InformesstudentComponent } from './informesstudent/informesstudent.comp
     RecuerdacoloresComponent,
     AhorcadoComponent,
     InformesComponent,
-    InformesstudentComponent
+    InformesstudentComponent,
+    MisactividadesComponent,
+    CreaactividadesComponent
   ],
   exports: [
     DashboardComponent,

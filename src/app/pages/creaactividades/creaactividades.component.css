@@ -1,0 +1,72 @@
+#principal{
+    height: 800px;
+    width: 200px;
+    margin-left: 25%;
+}
+#divExamen{
+    margin-left: -234px;
+    margin-top: 119px;   
+}
+#pregunta{
+    height: 150px;
+    width: 150px;
+    font-size: 94px;
+    margin-top: 60px;
+    border-radius: 50%;
+    background: #67D2B0;
+    position: absolute;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* align-self: center; */
+    align-items: center;
+    padding-bottom: 10px;
+    font-size: 87px;
+    
+}
+#txtExamen{
+    margin-top: 228px;
+    position: relative;
+    margin-left: 0%;
+    position: absolute;
+}
+#dExamen{
+    margin-top: 20px;
+    position: relative;
+    margin-left: -35%;
+    position: absolute;
+    
+}
+#txtPasa{
+    margin-top: 231px;
+    position: relative;
+    margin-left: -23%;
+}
+#divAbierta{
+    margin-top: 0px;
+    position: absolute;
+    margin-left: 279px;
+}
+#divLineas{
+    margin-top: -128px;
+    position: absolute;
+    margin-left: 9px;
+}
+#divOrdena{
+    margin-top: -131px;
+    position: absolute;
+    margin-left: 546px;
+}
+
+@keyframes precionar {
+    from {height: 150px;
+        width: 150px;}
+    to {height: 170px;
+        width: 170px;}
+}
+#pregunta:hover {
+    background: rgba(0,0,0,0);
+    color: #67D2B0;
+    box-shadow: inset 0 0 0 3px #67D2B0;
+    }
