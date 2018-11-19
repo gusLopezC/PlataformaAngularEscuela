@@ -15,12 +15,20 @@ import { GatoComponent } from './gato/gato.component';
 import { SnakeComponent } from './snake/snake.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
 import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
+<<<<<<< HEAD
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.component';
 import { GatoversusComponent } from './gatoversus/gatoversus.component';
 import { InformesComponent } from './informes/informes.component';
 import { FormularioactividadComponent } from './formularioactividad/formularioactividad.component';
 import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
+=======
+import { FormularioCreaActividadComponent } from './formulario-crea-actividad/formulario-crea-actividad.component';
+import { CompartiractividadComponent } from './compartiractividad/compartiractividad.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.component';
+import { GatoversusComponent } from './gatoversus/gatoversus.component';
+>>>>>>> 22313b83ea893f33936355f3e41f3837809b5819
 
 
 
@@ -39,11 +47,18 @@ const pagesRoutes: Routes = [
     { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
 
     // Actividades
+<<<<<<< HEAD
     { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'Mis actividades' } },
     { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'Crea actividades' } },
     { path: 'formularioactividad', component: FormularioactividadComponent, data: { titulo: 'Crea tu actividad' } },
     { path: 'formulariopreguntas', component: FormulariopreguntasComponent, data: { titulo: 'Crea tus preguntas' } },
 
+=======
+    { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'misactividades' } },
+    { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'creaactividades' } },
+    { path: 'formulario-crea-actividad', component: FormularioCreaActividadComponent, data: { titulo: 'formulario-crea-actividad' } },
+    { path: 'compartiractividad', component: CompartiractividadComponent, data: { titulo: 'Compartiractividad' } },
+>>>>>>> 22313b83ea893f33936355f3e41f3837809b5819
 
     // Informes
     { path: 'informes', component: InformesComponent, data: { titulo: 'Informes' } },

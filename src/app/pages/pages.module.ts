@@ -30,8 +30,13 @@ import { InformesComponent } from './informes/informes.component';
 import { InformesstudentComponent } from './informesstudent/informesstudent.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
 import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
+<<<<<<< HEAD
 import { FormularioactividadComponent } from './formularioactividad/formularioactividad.component';
 import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
+=======
+import { FormularioCreaActividadComponent } from './formulario-crea-actividad/formulario-crea-actividad.component';
+import { CompartiractividadComponent } from './compartiractividad/compartiractividad.component';
+>>>>>>> 22313b83ea893f33936355f3e41f3837809b5819
 
 
 @NgModule({
@@ -55,8 +60,13 @@ import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopr
     InformesstudentComponent,
     MisactividadesComponent,
     CreaactividadesComponent,
+<<<<<<< HEAD
     FormularioactividadComponent,
     FormulariopreguntasComponent
+=======
+    FormularioCreaActividadComponent,
+    CompartiractividadComponent
+>>>>>>> 22313b83ea893f33936355f3e41f3837809b5819
   ],
   exports: [
     DashboardComponent,
