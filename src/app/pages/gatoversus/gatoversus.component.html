@@ -1,3 +1,37 @@
-<p>
-  gatoversus works!
-</p>
+<div class="card">
+  <div class="card-body">
+      <h2 class="card-title">Juega contra el amigo</h2>
+      <br><br><br>
+      <div id="font">
+          <h1>
+              <div id="tablero" text-align='center'>
+
+                  <div class="row">
+                      <div id="c00" onClick="RevisarCelda(0,0)" class="celda amarilla"></div>
+                      <div id="c01" onClick="RevisarCelda(0,1)" class="celda roja"></div>
+                      <div id="c02" onClick="RevisarCelda(0,2)" class="celda amarilla"></div>
+                  </div>
+
+
+                  <div class="row">
+                      <div id="c10" onClick="RevisarCelda(1,0)" class="celda amarilla"></div>
+                      <div id="c11" onClick="RevisarCelda(1,1)" class="celda roja"></div>
+                      <div id="c12" onClick="RevisarCelda(1,2)" class="celda amarilla"></div>
+                  </div>
+
+
+                  <div class="row">
+                      <div id="c20" onClick="RevisarCelda(2,0)" class="celda amarilla"></div>
+                      <div id="c21" onClick="RevisarCelda(2,1)" class="celda roja"></div>
+                      <div id="c22" onClick="RevisarCelda(2,2)" class="celda amarilla"></div>
+
+                  </div>
+              </div>
+          </h1>
+          <div>
+              <p id="mensaje"></p>
+              <p id="boton" onClick="jugarOtraVez()"></p>
+          </div>
+      </div>
+  </div>
+</div>

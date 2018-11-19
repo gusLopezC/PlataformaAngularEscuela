@@ -15,6 +15,12 @@ import { GatoComponent } from './gato/gato.component';
 import { SnakeComponent } from './snake/snake.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
 import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.component';
+import { GatoversusComponent } from './gatoversus/gatoversus.component';
+import { InformesComponent } from './informes/informes.component';
+import { FormularioactividadComponent } from './formularioactividad/formularioactividad.component';
+import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
 
 
 
@@ -33,20 +39,22 @@ const pagesRoutes: Routes = [
     { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
 
     // Actividades
-    { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'misactividades' } },
-    { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'creaactividades' } },
+    { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'Mis actividades' } },
+    { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'Crea actividades' } },
+    { path: 'formularioactividad', component: FormularioactividadComponent, data: { titulo: 'Crea tu actividad' } },
+    { path: 'formulariopreguntas', component: FormulariopreguntasComponent, data: { titulo: 'Crea tus preguntas' } },
 
 
     // Informes
-    { path: 'informes', component: GatoComponent, data: { titulo: 'Informes' } },
-    { path: 'informesstudent', component: GatoComponent, data: { titulo: 'Informes Student' } },
+    { path: 'informes', component: InformesComponent, data: { titulo: 'Informes' } },
+    { path: 'informesstudent', component: InformesComponent, data: { titulo: 'Informes Student' } },
 
     // Juegos
     { path: 'gato', component: GatoComponent, data: { titulo: 'Gato' } },
-    { path: 'gatoversus', component: SnakeComponent, data: { titulo: 'Gato Versus' } },
+    { path: 'gatoversus', component: GatoversusComponent, data: { titulo: 'Gato Versus' } },
     { path: 'snake', component: SnakeComponent, data: { titulo: 'Snake' } },
-    { path: 'recuerdacolores', component: SnakeComponent, data: { titulo: 'Recuerdacolores' } },
-    { path: 'ahorcado', component: SnakeComponent, data: { titulo: 'Ahorcado' } },
+    { path: 'recuerdacolores', component: RecuerdacoloresComponent, data: { titulo: 'Recuerdacolores' } },
+    { path: 'ahorcado', component: AhorcadoComponent, data: { titulo: 'Ahorcado' } },
 
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 

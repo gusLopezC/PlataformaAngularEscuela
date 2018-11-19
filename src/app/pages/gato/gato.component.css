@@ -31,14 +31,6 @@ body {
     padding: 5px;
 }
 
-#tablero .row {
-    padding: 0px;
-    width: 100%;
-    clear: both;
-    position: center;
-    height: 100px;
-    text-align: center
-}
 
 #tablero .row .celda {
     margin: 1px;
@@ -113,14 +105,4 @@ body {
     background-color: black;
     font-size: 24px;
     text-align: center;
-}
-
-#font {
-    background-color: black;
-    width: 285px;
-    height: 300px;
-}
-
-.card {
-    height: 600px;
 }

@@ -30,6 +30,8 @@ import { InformesComponent } from './informes/informes.component';
 import { InformesstudentComponent } from './informesstudent/informesstudent.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
 import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
+import { FormularioactividadComponent } from './formularioactividad/formularioactividad.component';
+import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { CreaactividadesComponent } from './creaactividades/creaactividades.comp
     InformesComponent,
     InformesstudentComponent,
     MisactividadesComponent,
-    CreaactividadesComponent
+    CreaactividadesComponent,
+    FormularioactividadComponent,
+    FormulariopreguntasComponent
   ],
   exports: [
     DashboardComponent,

@@ -1,0 +1,108 @@
+* {
+    margin: 0 auto;
+    width: 0 auto;
+}
+
+p {
+    color: red;
+}
+
+body {
+    background-color: white;
+    color: brown;
+    font-size: 16 px;
+}
+
+#tiempo {
+    padding: 5px;
+    margin: 2px;
+    border-radius: 2px;
+    border-style: solid;
+    height: 40px;
+    width: 80px;
+    display: block;
+}
+
+#minutos {
+    padding: 5px;
+}
+
+#segundos {
+    padding: 5px;
+}
+
+
+#tablero .row .celda {
+    margin: 1px;
+    border-radius: 10px;
+    padding: 0px;
+    height: 90px;
+    width: 90px;
+    display: inline-block;
+    border-style: solid;
+}
+
+#tablero .row .celda:hover {
+    background-color: blue;
+}
+
+#tablero .row .celda img {
+    width: 100%;
+    border-radius: 10px;
+    height: 115%;
+    position: center;
+    top: 0px;
+    left: 30px;
+    text-align: center;
+}
+
+.roja {
+    background-color: white;
+}
+
+.amarilla {
+    background-color: white;
+}
+
+#mensaje {
+    float: left;
+    border-radius: 10px;
+    border-style: solid;
+    display: none;
+    width: 290px;
+    height: 60px;
+    color: white;
+    background-color: blue;
+    font-size: 24px;
+    text-align: center;
+}
+
+#boton {
+    clear: both;
+    float: left;
+    border-radius: 10px;
+    border-style: solid;
+    display: none;
+    width: 290px;
+    height: 50px;
+    padding: 2px;
+    color: hsla(209, 100%, 50%, 0.719);
+    background-color: black;
+    font-size: 24px;
+    text-align: center;
+}
+
+#boton {
+    clear: both;
+    float: left;
+    border-radius: 10px;
+    border-style: solid;
+    display: none;
+    width: 290px;
+    height: 50px;
+    padding: 2px;
+    color: white;
+    background-color: black;
+    font-size: 24px;
+    text-align: center;
+}
