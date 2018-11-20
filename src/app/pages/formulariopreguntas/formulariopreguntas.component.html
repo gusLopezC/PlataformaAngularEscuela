@@ -6,15 +6,108 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6">
-      <div class="card card-primary">
-          <div class="card-header">
-              <h4 class="m-b-0 text-white">Card Title</h4></div>
-          <div class="card-body">
-              <h3 class="card-title">Special title treatment</h3>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-inverse">Go somewhere</a>
-          </div>
+  <div class="col-md-3">
+    <div class="card card-inverse" style="background-color: #0CA0E8; border-color: #333;">
+      <div class="card-header">
+        <h3 class="m-b-0 text-white">Opcion Múltiple</h3>
       </div>
+      <div class="card-body text-center">
+        <p class="card-text" style="color: white">Esta actividad se trata de seleccionar la respuesta correcta entre
+          las opciones que se muestran.</p>
+        <button (click)="mostrarformularioOP(formularioOP)" class="btn btn-rounded btn-secondary">Crear actividad</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-inverse" style="background-color: #9E00FF; border-color: #333;">
+      <div class="card-header">
+        <h3 class="m-b-0 text-white">Relaciona lineas</h3>
+      </div>
+      <div class="card-body text-center">
+        <p class="card-text" style="color: white">Consiste en relacioanr los elementos de las columnas esto trazando
+          una linea entre ellos con una relación.</p>
+        <button (click)="mostrarformularioRL (formularioRL)" class="btn btn-rounded btn-secondary">Crear actividad</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-inverse" style="background-color: #DE380B; border-color: #DE380B;">
+      <div class="card-header">
+        <h3 class="m-b-0 text-white">Pregunta abierta</h3>
+      </div>
+      <div class="card-body text-center">
+        <p class="card-text" style="color: white">Se muestra una cadena de texto unidas por lineas en la cual los
+          alumnos deben colocar las respuesta.</p>
+        <button (click)="mostrarformularioPA (formularioPA)" class="btn btn-rounded btn-secondary">Crear actividad</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card card-inverse" style="background-color: #039900; border-color: #333;">
+      <div class="card-header">
+        <h3 class="m-b-0 text-white">Falso Verdadero</h3>
+      </div>
+      <div class="card-body text-center">
+        <p class="card-text" style="color: white">Esta actividad consta únicamente con dos opciones a elegir por
+          pregunta siendo las unicas respuestas F y V.</p>
+        <button (click)="mostrarformularioFV (formularioFV)" class="btn btn-rounded btn-secondary">Crear actividad</button>
+      </div>
+    </div>
   </div>
 </div>
+<!-- Formulario actividad 1 -->
+<div class="row" *ngIf="!formularioOP">
+  <div class="col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="box-title m-b-0">Opcion Múltiple </h4><br>
+        <form class="form">
+          <div class="form-group">
+            <label>Pregunta</label>
+            <div class="input-group">
+              <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+              <div class="input-group-addon">
+                <i class="fas fa-question"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group row has-success col-6">
+              <label for="inputHorizontalSuccess" class="col-sm-3 col-form-label">Correcta</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row has-danger col-6">
+              <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Distractor</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row has-danger col-6">
+              <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Distractor</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row has-danger col-6">
+              <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Distractor</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="">
+              </div>
+            </div>
+            <br>
+            <button routerLink="/previsualizaactividad" routerLinkActive="router-link-active" type="submit" class="btn btn-success waves-effect waves-light m-r-10"
+              style="background: #0192C5">Aceptar</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Formulario actividad 2 -->
+
+<!-- Formulario actividad 3 -->
+
+<!-- Formulario actividad 4 -->
