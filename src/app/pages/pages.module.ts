@@ -34,6 +34,8 @@ import { FormularioactividadComponent } from './formularioactividad/formularioac
 import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
 import { PrevisualizaactividadComponent } from './previsualizaactividad/previsualizaactividad.component';
 import { CompartiractividadComponent } from './compartiractividad/compartiractividad.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { FullCalendarModule } from 'ng-fullcalendar';
 
 
 @NgModule({
@@ -60,7 +62,8 @@ import { CompartiractividadComponent } from './compartiractividad/compartiractiv
     FormularioactividadComponent,
     FormulariopreguntasComponent,
     PrevisualizaactividadComponent,
-    CompartiractividadComponent
+    CompartiractividadComponent,
+    AgendaComponent
   ],
   exports: [
     DashboardComponent,
@@ -72,6 +75,7 @@ import { CompartiractividadComponent } from './compartiractividad/compartiractiv
     FormsModule,
     ChartsModule,
     PipesModule,
+    FullCalendarModule
   ]
 })
 export class PagesModule { }

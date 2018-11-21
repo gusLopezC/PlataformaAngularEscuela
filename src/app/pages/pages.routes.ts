@@ -23,6 +23,7 @@ import { FormularioactividadComponent } from './formularioactividad/formularioac
 import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
 import { PrevisualizaactividadComponent } from './previsualizaactividad/previsualizaactividad.component';
 import { CompartiractividadComponent } from './compartiractividad/compartiractividad.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 
 
@@ -39,7 +40,7 @@ const pagesRoutes: Routes = [
     { path: 'grupos', component: GruposComponent, data: { titulo: 'Mantenimiento Grupos' } },
     { path: 'examenes', component: ExamenesComponent, data: { titulo: 'Mantenimiento Examenes' } },
     { path: 'examen/:id', component: ExamenComponent, data: { titulo: 'Actualizar Examen' } },
-
+    { path: 'agenda', component: AgendaComponent, data: { titulo: 'Agenda' } },
     // Actividades
     { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'Mis actividades' } },
     { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'Crea actividades' } },
