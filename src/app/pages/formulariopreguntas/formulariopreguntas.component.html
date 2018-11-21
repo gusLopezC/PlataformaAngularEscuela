@@ -107,7 +107,234 @@
   </div>
 </div>
 <!-- Formulario actividad 2 -->
+<div class="row" *ngIf="!formularioRL">
+  <div class="col-md-12">
+    <div class="card card-body">
+      <h3 class="box-title m-b-0">Relaciona Lineas</h3>
+      <p class="text-muted m-b-30 font-13"> </p>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <form>
+            <div class="form-group row col-sm-12">
+              <label>Instruccion</label>
+              <input type="text" class="form-control " id="inputHorizontalSuccess" placeholder="">
+            </div>
+            <div class="row">
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalSuccess" class="col-sm-3 col-form-label">Columna 1</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="">
 
+                </div>
+              </div>
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Columna 2</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+              <div class="form-group row  col-6">
+                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control " id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <br>
+            <br><br>
+            <button routerLink="/previsualizaactividad" type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="background: #0192C5">Aceptar</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Formulario actividad 3 -->
+<div class="row" *ngIf="!formularioPA">
+  <div class="col-md-12">
+    <div class="card card-body">
+      <h3 class="box-title m-b-0">Preguntas abierta</h3>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <form>
+            <div class="form-group row col-sm-12">
+            </div>
+            <div class="row">
+              <div class="form-group row has-success col-6">
+                <label for="inputHorizontalSuccess" class="col-sm-4 col-form-label">Pregunta 1</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-success" id="inputSuccess1">
 
+                </div>
+              </div>
+              <div class="form-group row has-warning col-6">
+                <label for="inputHorizontalDnger" class="col-sm-4 col-form-label">Respuesta 1</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputHorizontalwarning" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row has-success col-6">
+                <label for="inputHorizontalSuccess" class="col-sm-4 col-form-label">Pregunta 2</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+                </div>
+              </div>
+              <div class="form-group row has-warning col-6">
+                <label for="inputHorizontalDnger" class="col-sm-4 col-form-label">Respuesta 2</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row has-success col-6">
+                <label for="inputHorizontalSuccess" class="col-sm-4 col-form-label">Pregunta 3</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+                </div>
+              </div>
+              <div class="form-group row has-warning col-6">
+                <label for="inputHorizontalDnger" class="col-sm-4 col-form-label">Respuesta 3</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row has-success col-6">
+                <label for="inputHorizontalSuccess" class="col-sm-4 col-form-label">Pregunta 4</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+                </div>
+              </div>
+              <div class="form-group row has-warning col-6">
+                <label for="inputHorizontalDnger" class="col-sm-4 col-form-label">Respuesta 4</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="">
+                </div>
+              </div>
+            </div>
+            <br>
+            <br><br>
+            <button routerLink="/previsualizaactividad" type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="background: #0192C5">Aceptar</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Formulario actividad 4 -->
+<div class="row" *ngIf="!formularioFV">
+  <div class="col-md-12">
+    <div class="card card-body">
+      <h3 class="box-title m-b-0">Falso Verdadero</h3>
+      <p class="text-muted m-b-30 font-13"> </p>
+      <div class="row">
+        <div class="col-md-10">
+          <div class="card card-body">
+            <div class="form-group row col-12">
+              <label>Instrucción</label>
+              <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+            </div>
+            <div class="row">
+              <div class="form-group row col-sm-5">
+                <label>Pregunta</label>
+                <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+
+                <div class="col-sm-6" style="margin-left: 305px;margin-top: -30px;">
+                  <input name="group5" type="radio" id="radio_48" class="with-gap radio-col-blue-grey" />
+                  <label for="radio_48">V</label>
+                  <input name="group5" type="radio" id="radio_49" class="with-gap radio-col-red" />
+                  <label for="radio_49">F</label>
+                </div>
+
+
+              </div>
+              <div class="form-group row col-sm-5" style="margin-left: 65px;">
+                <label>Pregunta</label>
+                <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+
+                <div class="col-sm-6" style="margin-left: 305px;margin-top: -30px;">
+                  <input name="group6" type="radio" id="radio_50" class="with-gap radio-col-blue-grey" />
+                  <label for="radio_50" style="margin-right: 10px;">V</label>
+                  <input name="group6" type="radio" id="radio_51" class="with-gap radio-col-red" />
+                  <label for="radio_51">F</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group row col-sm-5">
+                <label>Pregunta</label>
+                <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+
+                <div class="col-sm-6" style="margin-left: 305px;margin-top: -30px;">
+                  <input name="group7" type="radio" id="radio_52" class="with-gap radio-col-blue-grey" />
+                  <label for="radio_52">V</label>
+                  <input name="group7" type="radio" id="radio_53" class="with-gap radio-col-red" />
+                  <label for="radio_53">F</label>
+                </div>
+              </div>
+              <div class="form-group row col-sm-5" style="margin-left: 65px;">
+                <label>Pregunta</label>
+                <input type="text" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="">
+
+                <div class="col-sm-6" style="margin-left: 305px;margin-top: -30px;">
+                  <input name="group8" type="radio" id="radio_54" class="with-gap radio-col-blue-grey" />
+                  <label for="radio_54" style="margin-right: 10px;">V</label>
+                  <input name="group8" type="radio" id="radio_55" class="with-gap radio-col-red" />
+                  <label for="radio_55">F</label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button routerLink="/previsualizaactividad" type="submit" class="btn btn-success waves-effect waves-light m-r-10" style="background: #0192C5">Aceptar</button>
+              <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
