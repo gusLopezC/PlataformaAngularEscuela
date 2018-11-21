@@ -10,8 +10,6 @@
     
 }
 #espanol{
-    margin-left: 550px;
-    margin-top: -150px;
     height: 150px;
     width: 350px;
     background-image: url(../../../assets/images/espanol.jpg);
@@ -23,7 +21,6 @@
     
 }
 #ciencias{
-    margin-top: 100px;
     height: 150px;
     width: 350px;
     background-image: url(../../../assets/images/Ciencias.jpg);
@@ -34,8 +31,6 @@
     font-size: 35px;
 }
 #historia{
-    margin-left: 550px;
-    margin-top: -150px;
     height: 150px;
     width: 350px;
     background-image: url(../../../assets/images/historia.jpg);
@@ -44,4 +39,9 @@
     opacity: 0.9;
     font-family: 'Spicy Rice', cursive;
     font-size: 35px;
+}
+
+.col-centrada{
+    float: none;
+    margin: 0 auto;
 }
