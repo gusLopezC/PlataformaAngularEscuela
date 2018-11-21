@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
       this.forma.value.name,
       this.forma.value.email,
       this.forma.value.password,
-      this.forma.value.role = 'TEACHER_ROLE'
+      this.forma.value.role = 'ADMIN_ROLE'
     );
 
     this._usuarioService.crearUsuario(usuario)
