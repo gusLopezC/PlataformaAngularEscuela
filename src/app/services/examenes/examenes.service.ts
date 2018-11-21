@@ -68,7 +68,7 @@ export class ExamenesService {
 
       return this.http.put(url, examen).pipe(
         map((resp: any) => {
-          swal('Médico Actualizado', examen.nombre, 'success');
+          swal('Examen Actualizado', examen.nombre, 'success');
           return resp.examenGuardado;
         }));
 
@@ -76,7 +76,7 @@ export class ExamenesService {
       // creando
       return this.http.post(url, examen).pipe(
         map((resp: any) => {
-          swal('Médico Creado', examen.nombre, 'success');
+          swal('Examen Creado', examen.nombre, 'success');
           return resp.examenGuardado;
         }));
     }
