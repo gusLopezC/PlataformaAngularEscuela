@@ -7,36 +7,25 @@
     </div>
   </div>
 </div>
-<div class="card">
-  <div class="card-body" style="height: 1000px;">
-    <h1 id="titulo">Se ha Guardado con Exito!!!</h1>
-    <h3 id="sub">'ejercicio 1'</h3>
-    <div id="principal">
-      <div id="divExamen">
-
-        <a id="Modificar" class="fa fa-edit"></a>
-        <h1 id="txtExamen">Modificar</h1>
-
+<div class="row">
+  <div class="col-12">
+    <div class="card text-align:center " >
+      <h1 style="text-align: center;">Se ha Guardado con Exito!!!</h1>
+      <h3 style="text-align: center;">'Matematicas'</h3>
+      <br>
+      <div class="card-body" style='float: none; margin: 0 auto;'>
+        <div class="row">
+          <div class="col-sm-12 ">
+            <button type="button" class="btn btn-warning btn-circle btn-xl" style="width:150px; height:150px; margin: 10px;"><i class="fa fa-edit fa-3x "></i>
+            </button>
+            <button type="button" class="btn btn-info btn-circle btn-xl" style="width:150px; height:150px; margin: 10px;"><i class="far fa-eye fa-3x"></i>
+            </button>
+            <button type="button" class="btn btn-primary btn-circle btn-xl" style="width:150px; height:150px; margin: 10px;"><i class="fas fa-play fa-3x"></i>
+            </button>
+            <button (click)="generarLink()" type="button" class="btn btn-danger btn-circle btn-xl" style="width:150px; height:150px; margin: 10px;"><i class="fas fa-share-alt fa-3x"></i></button>
+          </div>
+        </div>
       </div>
-      <div id="divPreview">
-
-        <a id="ver" class="ti ti-eye"></a>
-        <h1 id="txtVer">Ver</h1>
-
-      </div>
-      <div id="divEmpezar">
-
-        <a id="Empezar" class="ti ti-control-play"></a>
-        <h1 id="txtEmpezar">Empezar</h1>
-
-      </div>
-      <div id="divCompartir">
-
-        <a (click)="generarLink()" id="Compartir" class="ti ti-sharethis"></a>
-        <h1 id="txtCompartir">Compartir</h1>
-
-      </div>
-
     </div>
   </div>
 </div>
