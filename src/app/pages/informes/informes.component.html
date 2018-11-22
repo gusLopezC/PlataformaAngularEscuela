@@ -1,3 +1,55 @@
-<p>
-  informes works!
-</p>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title textocentrado"> Comparativa grupos </h4>
+        <div>
+          <canvas baseChart [chartType]="'bar'" [datasets]="
+          chartData" [labels]="chartLabels" [options]="chartOptions"
+            [legend]="true" (chartClick)="onChartClick($event)">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title textocentrado"> Comparativa grupos </h4>
+        <div>
+          <canvas baseChart [chartType]="'pie'" [datasets]="
+          chartData1" [labels]="chartLabels1" [options]="chartOptions"
+            [legend]="true" (chartClick)="onChartClick($event)">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title textocentrado"> Resultados razonamiento verbal </h4>
+        <div>
+          <canvas baseChart [chartType]="'bar'" [datasets]="
+          chartData2" [labels]="chartLabels2" [options]="chartOptions"
+            [legend]="true" (chartClick)="onChartClick($event)">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title textocentrado"> Resultados razonamiento matematico </h4>
+       
+        <div>
+          <canvas baseChart [chartType]="'bar'" [datasets]="
+          chartData3" [labels]="chartLabels3" [options]="chartOptions"
+            [legend]="true" (chartClick)="onChartClick($event)">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
