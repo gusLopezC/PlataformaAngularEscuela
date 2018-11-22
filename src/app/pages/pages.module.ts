@@ -29,14 +29,12 @@ import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { InformesComponent } from './informes/informes.component';
 import { InformesstudentComponent } from './informesstudent/informesstudent.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
-import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
 import { FormularioactividadComponent } from './formularioactividad/formularioactividad.component';
 import { FormulariopreguntasComponent } from './formulariopreguntas/formulariopreguntas.component';
 import { PrevisualizaactividadComponent } from './previsualizaactividad/previsualizaactividad.component';
 import { CompartiractividadComponent } from './compartiractividad/compartiractividad.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { FullCalendarModule } from 'ng-fullcalendar';
-
 
 @NgModule({
   declarations: [
@@ -58,7 +56,6 @@ import { FullCalendarModule } from 'ng-fullcalendar';
     InformesComponent,
     InformesstudentComponent,
     MisactividadesComponent,
-    CreaactividadesComponent,
     FormularioactividadComponent,
     FormulariopreguntasComponent,
     PrevisualizaactividadComponent,

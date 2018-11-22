@@ -14,7 +14,6 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 import { GatoComponent } from './gato/gato.component';
 import { SnakeComponent } from './snake/snake.component';
 import { MisactividadesComponent } from './misactividades/misactividades.component';
-import { CreaactividadesComponent } from './creaactividades/creaactividades.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { RecuerdacoloresComponent } from './recuerdacolores/recuerdacolores.component';
 import { GatoversusComponent } from './gatoversus/gatoversus.component';
@@ -43,7 +42,6 @@ const pagesRoutes: Routes = [
     { path: 'agenda', component: AgendaComponent, data: { titulo: 'Agenda' } },
     // Actividades
     { path: 'misactividades', component: MisactividadesComponent, data: { titulo: 'Mis actividades' } },
-    { path: 'creaactividades', component: CreaactividadesComponent, data: { titulo: 'Crea actividades' } },
     { path: 'formularioactividad', component: FormularioactividadComponent, data: { titulo: 'Crea tu actividad' } },
     { path: 'formulariopreguntas', component: FormulariopreguntasComponent, data: { titulo: 'Crea tus preguntas' } },
     { path: 'previsualizaactividad', component: PrevisualizaactividadComponent, data: { titulo: 'Previsualza tu actividades' } },
